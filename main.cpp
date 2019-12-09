@@ -88,6 +88,14 @@ void DrawRectangle(SDL_Surface *screen, int x, int y, int l, int k,
 	};
 
 Uint32 colors[6] = { 0x00000000,0x00ffffff,0x0000ff00, 0x00ffff00, 0x00FFC0CB, 0x00ff0000 };
+/*
+0 - czarny
+1 - bia³y
+2 - zielony
+3 - ¿ó³ty
+4 - ró¿owy
+5 - czerwony
+*/
 int frogg[12][12] =
 {
 	{0,0,0,0,0,0,0,0,0,0,0,0},
