@@ -6,7 +6,7 @@
             "command": "C:\\Users\\SPECTRE\\mingw\\mingw64\\bin\\g++.exe",
             "args": [
                 "-g",
-                "${fileDirname}\\*.c",
+                "${fileDirname}\\*.cpp",
                 "-o",
                 "${fileDirname}\\frogger.exe"
             ],
