@@ -196,6 +196,10 @@ int main(int argc, char **argv) {
 	SDL_Surface* el;
 	el = SDL_CreateRGBSurface(0, 200, 200, 32, 0, 0, 0, 255);
 	SDL_SetColorKey(el, true, 0x000000);
+	SDL_Surface* elr;
+	elr = SDL_CreateRGBSurface(0, 200, 200, 32, 0, 0, 0, 255);
+	SDL_SetColorKey(elr, true, 0x000000);
+
 	int x = 0;
 	int y = 0;
 	int size = 5;
@@ -204,8 +208,16 @@ int main(int argc, char **argv) {
 		for (int j = 0; j < 12; j++)
 			if (turtel[i][j] != 0)
 				DrawRectangle(el,x+j*size,y+i*size,size,size, colors[turtel[i][j]], colors[turtel[i][j]]);
-	
+	size = 4;
+	x = 6;
+	y = 6;
+	for (int i = 0; i < 12; i++)
+		for (int j = 0; j < 12; j++)
+			if (turtel[i][j] != 0)
+				DrawRectangle(elr, x + j * size, y + i * size, size, size, colors[turtel[i][j]], colors[turtel[i][j]]);
 
+	
+		
 	scrtex = SDL_CreateTexture(renderer, SDL_PIXELFORMAT_ARGB8888,
 	                           SDL_TEXTUREACCESS_STREAMING,
 	                           SCREEN_WIDTH, SCREEN_HEIGHT);
@@ -279,11 +291,14 @@ int main(int argc, char **argv) {
 		            SCREEN_WIDTH / 2 + sin(distance) * SCREEN_HEIGHT / 3,
 			    SCREEN_HEIGHT / 2 + cos(distance) * SCREEN_HEIGHT / 3);
 		
-		XTurtel+=0.1;
+		XTurtel+=0.5;
 		if (SCREEN_WIDTH + 65 *ileTurtli >= XTurtel)
 		{
 			for(int i = 0; i<ileTurtli; i++)
-			DrawSurface(screen, el, SCREEN_WIDTH + 100 - XTurtel + 65 * i, SCREEN_HEIGHT / 2);
+			if(int(XTurtel)%200>100)
+				DrawSurface(screen, el, SCREEN_WIDTH + 100 - XTurtel + 65 * i, SCREEN_HEIGHT / 2);
+			else
+				DrawSurface(screen, elr, SCREEN_WIDTH + 100 - XTurtel + 65 * i, SCREEN_HEIGHT / 2);
 			
 		}
 		else
