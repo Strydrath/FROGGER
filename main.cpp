@@ -279,13 +279,13 @@ int main(int argc, char **argv) {
 			    SCREEN_HEIGHT / 2 + cos(distance) * SCREEN_HEIGHT / 3);
 		
 		XTurtel+=0.1;
-		if (SCREEN_WIDTH >= XTurtel)
+		if (SCREEN_WIDTH + 230 >= XTurtel)
 		{
-			DrawSurface(screen, el, SCREEN_WIDTH - XTurtel, SCREEN_HEIGHT / 2);
-			DrawSurface(screen, el, SCREEN_WIDTH - XTurtel + 60, SCREEN_HEIGHT / 2);
-			DrawSurface(screen, el, SCREEN_WIDTH - XTurtel + 120, SCREEN_HEIGHT / 2);
-
+			DrawSurface(screen, el, SCREEN_WIDTH + 100 - XTurtel, SCREEN_HEIGHT / 2);
+			DrawSurface(screen, el, SCREEN_WIDTH + 100 - XTurtel + 65, SCREEN_HEIGHT / 2);
+			DrawSurface(screen, el, SCREEN_WIDTH + 100 - XTurtel + 130, SCREEN_HEIGHT / 2);
 		}
+		else XTurtel = 0;
 
 		fpsTimer += delta;
 		if(fpsTimer > 0.5) {
