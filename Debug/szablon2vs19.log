@@ -1,8 +1,14 @@
 ﻿  main.cpp
-C:\Users\krzys\Downloads\template-project-2\main.cpp(253,26): warning C4244: "argument": konwersja z "double" do "int", możliwa utrata danych
-C:\Users\krzys\Downloads\template-project-2\main.cpp(252,32): warning C4244: "argument": konwersja z "double" do "int", możliwa utrata danych
-C:\Users\krzys\Downloads\template-project-2\main.cpp(269,2): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\stdio.h(1774): message : zobacz deklarację „sprintf”
-C:\Users\krzys\Downloads\template-project-2\main.cpp(272,2): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\stdio.h(1774): message : zobacz deklarację „sprintf”
-  szablon2vs19.vcxproj -> C:\Users\krzys\Downloads\template-project-2\Debug\szablon2vs19.exe
+C:\Users\SPECTRE\Desktop\studia\GIT\FROGGER\main.cpp(188,81): warning C4305: 'argument': truncation from 'unsigned int' to 'Uint8'
+C:\Users\SPECTRE\Desktop\studia\GIT\FROGGER\main.cpp(188,71): warning C4309: 'argument': truncation of constant value
+C:\Users\SPECTRE\Desktop\studia\GIT\FROGGER\main.cpp(188,81): warning C4305: 'argument': truncation from 'int' to 'Uint8'
+C:\Users\SPECTRE\Desktop\studia\GIT\FROGGER\main.cpp(188,47): warning C4309: 'argument': truncation of constant value
+C:\Users\SPECTRE\Desktop\studia\GIT\FROGGER\main.cpp(188,35): warning C4309: 'argument': truncation of constant value
+C:\Users\SPECTRE\Desktop\studia\GIT\FROGGER\main.cpp(270,21): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\SPECTRE\Desktop\studia\GIT\FROGGER\main.cpp(300,58): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\SPECTRE\Desktop\studia\GIT\FROGGER\main.cpp(302,59): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\SPECTRE\Desktop\studia\GIT\FROGGER\main.cpp(325,2): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\stdio.h(1774): message : see declaration of 'sprintf'
+C:\Users\SPECTRE\Desktop\studia\GIT\FROGGER\main.cpp(328,2): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\stdio.h(1774): message : see declaration of 'sprintf'
+  szablon2vs19.vcxproj -> C:\Users\SPECTRE\Desktop\studia\GIT\FROGGER\Debug\szablon2vs19.exe
