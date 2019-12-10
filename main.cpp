@@ -291,7 +291,8 @@ int main(int argc, char **argv) {
 		            SCREEN_WIDTH / 2 + sin(distance) * SCREEN_HEIGHT / 3,
 			    SCREEN_HEIGHT / 2 + cos(distance) * SCREEN_HEIGHT / 3);
 		
-		XTurtel+=0.5;
+		XTurtel+= etiSpeed*100 * delta;
+		;
 		if (SCREEN_WIDTH + 65 *ileTurtli >= XTurtel)
 		{
 			for(int i = 0; i<ileTurtli; i++)
@@ -319,8 +320,8 @@ int main(int argc, char **argv) {
 		// tekst informacyjny / info text
 		//DrawRectangle(screen, 4, 4, SCREEN_WIDTH - 8, 36, czerwony, niebieski);
 		DrawRectangle(screen, SCREEN_WIDTH/2 - 200, 100, 400, 40, czerwony, niebieski);
-		DrawElement(screen, frogg, 300, 300,5);
-		DrawElement(screen, turtel, 380, 300, 10);
+		//DrawElement(screen, frogg, 300, 300,5);
+		//DrawElement(screen, turtel, 380, 300, 10);
 
 		//            "template for the second project, elapsed time = %.1lf s  %.0lf frames / s"
 		sprintf(text, "Szablon drugiego zadania, czas trwania = %.1lf s  %.0lf klatek / s", worldTime, fps);
