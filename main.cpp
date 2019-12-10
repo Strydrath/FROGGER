@@ -256,6 +256,7 @@ int main(int argc, char **argv) {
 	etiSpeed = 1;
 
 	float XTurtel = 0;
+	int ileTurtli = 1;
 	while(!quit) {
 		t2 = SDL_GetTicks();
 
@@ -279,16 +280,22 @@ int main(int argc, char **argv) {
 			    SCREEN_HEIGHT / 2 + cos(distance) * SCREEN_HEIGHT / 3);
 		
 		XTurtel+=0.1;
-		if (SCREEN_WIDTH + 230 >= XTurtel)
+		if (SCREEN_WIDTH + 65 *ileTurtli >= XTurtel)
 		{
-			DrawSurface(screen, el, SCREEN_WIDTH + 100 - XTurtel, SCREEN_HEIGHT / 2);
-			DrawSurface(screen, el, SCREEN_WIDTH + 100 - XTurtel + 65, SCREEN_HEIGHT / 2);
-			DrawSurface(screen, el, SCREEN_WIDTH + 100 - XTurtel + 130, SCREEN_HEIGHT / 2);
+			for(int i = 0; i<ileTurtli; i++)
+			DrawSurface(screen, el, SCREEN_WIDTH + 100 - XTurtel + 65 * i, SCREEN_HEIGHT / 2);
+			
 		}
-		else XTurtel = 0;
-
+		else
+		{
+			if (ileTurtli < 10) ileTurtli++;
+			XTurtel = 0;
+		}
+		
 		fpsTimer += delta;
 		if(fpsTimer > 0.5) {
+
+
 			fps = frames * 2;
 			frames = 0;
 			fpsTimer -= 0.5;
