@@ -128,14 +128,18 @@ int turtel[12][12] =
 	{0,0,0,0,0,0,0,0,0,0,0,0}
 };
 
-
 void DrawElement(SDL_Surface* screen, int element[][12],int x, int y,int size)
 {
-	for (int i = 0; i < 12; i++)
-		for (int j = 0; j < 12; j++)
+	
+	//el = SDL_CreateRGBSurface(0, size * 16, size * 16, 32, 0x00FF0000, 0x0000FF00, 0x000000FF, 0xFF000000);
+
+	//for (int i = 0; i < 12; i++)
+	//	for (int j = 0; j < 12; j++)
 			//if (turtel[i][j] != 0)
-				DrawRectangle(screen,x+j*size,y+i*size,size,size, colors[element[i][j]], colors[element[i][j]]);
+			//	DrawRectangle(el,x+j*size,y+i*size,size,size, colors[element[i][j]], colors[element[i][j]]);
 				//DrawPixel(screen, x + j, y + i, 0x0000ff00);
+	//DrawSurface(screen, el, SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2);
+
 
 }
 // main
@@ -181,13 +185,26 @@ int main(int argc, char **argv) {
 	
 	SDL_SetHint(SDL_HINT_RENDER_SCALE_QUALITY, "linear");
 	SDL_RenderSetLogicalSize(renderer, SCREEN_WIDTH, SCREEN_HEIGHT);
-	SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
+	SDL_SetRenderDrawColor(renderer, 0x00FF0000, 0x0000FF00, 0x000000FF, 0xFF000000);
 
 	SDL_SetWindowTitle(window, "FROGGER'2020");
 
 
 	screen = SDL_CreateRGBSurface(0, SCREEN_WIDTH, SCREEN_HEIGHT, 32,
 	                              0x00FF0000, 0x0000FF00, 0x000000FF, 0xFF000000);
+
+	SDL_Surface* el;
+	el = SDL_CreateRGBSurface(0, 200, 200, 32, 0, 0, 0, 255);
+	SDL_SetColorKey(el, true, 0x000000);
+	int x = 0;
+	int y = 0;
+	int size = 5;
+
+	for (int i = 0; i < 12; i++)
+		for (int j = 0; j < 12; j++)
+			if (turtel[i][j] != 0)
+				DrawRectangle(el,x+j*size,y+i*size,size,size, colors[turtel[i][j]], colors[turtel[i][j]]);
+	
 
 	scrtex = SDL_CreateTexture(renderer, SDL_PIXELFORMAT_ARGB8888,
 	                           SDL_TEXTUREACCESS_STREAMING,
@@ -238,6 +255,7 @@ int main(int argc, char **argv) {
 	distance = 0;
 	etiSpeed = 1;
 
+	float XTurtel = 0;
 	while(!quit) {
 		t2 = SDL_GetTicks();
 
@@ -259,6 +277,15 @@ int main(int argc, char **argv) {
 		DrawSurface(screen, eti,
 		            SCREEN_WIDTH / 2 + sin(distance) * SCREEN_HEIGHT / 3,
 			    SCREEN_HEIGHT / 2 + cos(distance) * SCREEN_HEIGHT / 3);
+		
+		XTurtel+=0.1;
+		if (SCREEN_WIDTH >= XTurtel)
+		{
+			DrawSurface(screen, el, SCREEN_WIDTH - XTurtel, SCREEN_HEIGHT / 2);
+			DrawSurface(screen, el, SCREEN_WIDTH - XTurtel + 60, SCREEN_HEIGHT / 2);
+			DrawSurface(screen, el, SCREEN_WIDTH - XTurtel + 120, SCREEN_HEIGHT / 2);
+
+		}
 
 		fpsTimer += delta;
 		if(fpsTimer > 0.5) {
